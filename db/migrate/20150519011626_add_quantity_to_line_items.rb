@@ -6,15 +6,8 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
-require 'test_helper'
-
-class StoreControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_select '#columns #side a', minimum: 4
-    assert_select '#main .entry', 2
-    assert_select '.price', /\$[,\d]+\.\d\d/
+class AddQuantityToLineItems < ActiveRecord::Migration
+  def change
+    add_column :line_items, :quantity, :integer, default: 1
   end
-
 end
