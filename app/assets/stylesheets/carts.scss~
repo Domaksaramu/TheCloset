@@ -1,4 +1,7 @@
 .carts {
+  .cart title{
+    font: 120% bold;
+  }
   .item_price, .total_line {
     text-align: right;
   }
